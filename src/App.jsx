@@ -49,7 +49,6 @@ function App() {
       >
         Drop Area
         {cardsArr.map((item, index) => {
-          console.log('Rendering inProgress cards:', item);
           return (
             <Card key={index} cardStyle={item.color || '#fff'}>
               <CardContent card={item} />
