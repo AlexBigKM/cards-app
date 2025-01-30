@@ -1,0 +1,26 @@
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+.cardsSection {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+  gap: 15px;
+}
+.cardsTable {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: dotted 2px grey;
+  height: 800px;
+}
+.cardValuesRow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

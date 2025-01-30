@@ -1,0 +1,25 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "type": "bug",
+      "assign": "Alex"
+    },
+    {
+      "id": 2,
+      "color": "#68d734",
+      "time": "2 hours"
+    },
+    {
+      "id": 3,
+      "type": "bug",
+      "assign": "Alex"
+    },
+    {
+      "id": 4,
+      "color": "#e17e21",
+      "time": "4 hours",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    }
+  ]
+}
