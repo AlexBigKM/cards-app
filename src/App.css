@@ -1,26 +1,82 @@
 #root {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   margin: 0;
   padding: 0;
   text-align: center;
   box-sizing: border-box;
+  background-color: #424242;
 }
-.cardsSection {
+.appWrapper {
   display: flex;
-  margin-bottom: 20px;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+.formWrapper {
+  border: 1px solid grey;
+  border-radius: 10px;
+  width: 50%;
+  margin: 30px 0 10px;
+  padding: 20px;
+  height: 250px;
+  overflow-y: auto;
+}
+.formContent {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+
+  label {
+    margin: 0 10px;
+  }
+  select {
+    height: 30px;
+  }
+  input {
+    height: 25px;
+  }
+  button {
+    width: 120px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    color: white;
+  }
+}
+.formInput {
+  display: flex;
+  gap: 10px;
+}
+.selectWrapper {
+  display: flex;
   gap: 15px;
 }
-.cardsTable {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  border: dotted 2px grey;
-  height: 800px;
+.addBtn {
+  background-color:#6495ED;
+}
+.submitBtn {
+  width: 50% !important;
+  background-color: #0BDA51;
 }
 .cardValuesRow {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+.cardsSectionWrapper {
+  width: 90%;
+  height: 600px;
+  border: 1px dotted grey;
+  padding: 10px;
+}
+.cardsWrapper {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
 }

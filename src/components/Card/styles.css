@@ -3,8 +3,12 @@
   height: 120px;
   background-color: white;
   border-radius: 10px;
-  color: black;
+  border: 1px solid white;
+  color: white;
   padding: 10px;
   text-align: start;
-  overflow: hidden;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: grey white;
+  text-transform: capitalize;
 }

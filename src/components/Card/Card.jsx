@@ -1,13 +1,8 @@
 import './styles.css';
 
-const Card = ({ cardStyle, onDragStartHandler, children }) => {
+const Card = ({ cardStyle, children }) => {
   return (
-    <div
-      className="cardWrapper"
-      style={{ backgroundColor: cardStyle }}
-      draggable
-      onDragStart={onDragStartHandler}
-    >
+    <div className="cardWrapper" style={{ backgroundColor: cardStyle }}>
       {children}
     </div>
   );
