@@ -1,21 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Card from './components/Card/Card';
 import CustomInput from './components/CustomInput/CustomInput';
 import CustomSelect from './components/CustomSelect/CustomSelect';
-import { CARD_TYPES, CARD_COLORS } from './constants';
-
-const typeOptions = [
-  { label: 'Bug', value: CARD_TYPES.BUG },
-  { label: 'Task', value: CARD_TYPES.TASK },
-  { label: 'Story', value: CARD_TYPES.STORY },
-];
-
-const colorOptions = [
-  { label: 'Blue', value: CARD_COLORS.BLUE },
-  { label: 'Green', value: CARD_COLORS.GREEN },
-  { label: 'Red', value: CARD_COLORS.RED },
-];
+import {
+  CARD_TYPES,
+  CARD_COLORS,
+  typeOptions,
+  colorOptions,
+} from './constants';
+import { getDefaultFields } from './utils';
 
 function CardContent({ card }) {
   return (
@@ -44,6 +38,10 @@ function App() {
   const [selectedColor, setSelectedColor] = useState(CARD_COLORS.RED);
   const [formFields, setFormFields] = useState([]);
 
+  useEffect(() => {
+    setFormFields(getDefaultFields(selectedType));
+  }, [selectedType]);
+
   const addField = () => {
     setFormFields([...formFields, { name: '', value: '' }]);
   };
@@ -56,9 +54,11 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formFields.length === 0) return;
 
-    const structuredData = formFields.reduce((acc, field) => {
+    const fieldsToSave =
+      formFields.length > 0 ? formFields : getDefaultFields(selectedType);
+
+    const structuredData = fieldsToSave.reduce((acc, field) => {
       acc[field.name] = field.value;
       return acc;
     }, {});
@@ -71,7 +71,7 @@ function App() {
     };
 
     setCards([...cards, newCard]);
-    setFormFields([]);
+    setFormFields(getDefaultFields(selectedType));
   };
 
   return (
@@ -95,7 +95,7 @@ function App() {
               style={{ backgroundColor: selectedColor }}
             />
             <button type="button" className="addBtn" onClick={addField}>
-              Add field
+              Add new field
             </button>
           </div>
           {formFields.map((field, index) => (

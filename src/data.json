@@ -1,0 +1,11 @@
+{
+  "bug": [
+    { "label": "Default label", "type": "Input", "value": "" }
+  ],
+  "task": [
+    { "label": "Default label", "type": "Input", "value": "Default value" }
+  ],
+  "story": [
+    { "label": "Default label", "type": "Input", "value": "" }
+  ]
+}
