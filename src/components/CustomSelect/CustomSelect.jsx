@@ -1,4 +1,10 @@
-const CustomSelect = ({ label, value, options, onChangeHandler, style }) => {
+const CustomSelect = ({
+  label,
+  value,
+  options = [],
+  onChangeHandler,
+  style,
+}) => {
   return (
     <div className="customSelect">
       <label>{label}:</label>

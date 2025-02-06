@@ -8,6 +8,7 @@ import {
   CARD_COLORS,
   typeOptions,
   colorOptions,
+  FIELD_TYPE,
 } from './constants';
 import { getDefaultFields } from './utils';
 
@@ -86,7 +87,6 @@ function App() {
               options={typeOptions}
               onChangeHandler={(e) => setSelectedType(e.target.value)}
             />
-
             <CustomSelect
               label="Card color"
               value={selectedColor}
@@ -100,22 +100,35 @@ function App() {
           </div>
           {formFields.map((field, index) => (
             <div key={index} className="formInput">
-              <CustomInput
-                inputLabel={'Label'}
-                inputValue={field.name}
-                placeholder={'Enter field name'}
-                onChangeHandler={(e) =>
-                  handleFieldChange(index, 'name', e.target.value)
-                }
-              />
-              <CustomInput
-                inputLabel={'Description'}
-                inputValue={field.value}
-                placeholder={'Enter field value'}
-                onChangeHandler={(e) =>
-                  handleFieldChange(index, 'value', e.target.value)
-                }
-              />
+              {field.type === FIELD_TYPE.SELECT ? (
+                <CustomSelect
+                  label={field.name}
+                  value={field.value}
+                  options={field.options || []}
+                  onChangeHandler={(e) =>
+                    handleFieldChange(index, 'value', e.target.value)
+                  }
+                />
+              ) : (
+                <>
+                  <CustomInput
+                    inputLabel={'Label'}
+                    inputValue={field.name}
+                    placeholder={'Enter field name'}
+                    onChangeHandler={(e) =>
+                      handleFieldChange(index, 'name', e.target.value)
+                    }
+                  />
+                  <CustomInput
+                    inputLabel={'Description'}
+                    inputValue={field.value}
+                    placeholder={'Enter field value'}
+                    onChangeHandler={(e) =>
+                      handleFieldChange(index, 'value', e.target.value)
+                    }
+                  />
+                </>
+              )}
             </div>
           ))}
           <button type="submit" className="submitBtn">

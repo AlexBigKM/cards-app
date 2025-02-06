@@ -1,3 +1,8 @@
+export const FIELD_TYPE = {
+  INPUT: 'Input',
+  SELECT: 'Select',
+}
+
 export const CARD_TYPES = {
   BUG: 'bug',
   TASK: 'task',

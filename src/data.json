@@ -1,11 +1,23 @@
 {
   "bug": [
-    { "label": "Default label", "type": "Input", "value": "" }
+    { 
+    "label": "Default select",
+     "type": "Select",
+     "options": ["option 1", "option 2", "option 3"]
+    }
   ],
   "task": [
-    { "label": "Default label", "type": "Input", "value": "Default value" }
+    { 
+     "label": "Default label",
+     "type": "Input",
+     "value": "Default value" 
+    }
   ],
   "story": [
-    { "label": "Default label", "type": "Input", "value": "" }
+    { 
+     "label": "Default label",
+     "type": "Input",
+     "value": "" 
+    }
   ]
 }
